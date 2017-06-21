@@ -11,6 +11,7 @@
     tools:context="kritika.in.collegeapp.MainActivity">
 
     <TextView
+        android:id="@+id/txt_titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
