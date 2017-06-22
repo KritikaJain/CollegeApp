@@ -38,9 +38,11 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         boolean loginstatus;
         CheckBox login_check_box;
 
+
         @Override
         protected void onCreate (Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
             setContentView(R.layout.activity_login);
         viewFlipper = (ViewFlipper) findViewById(R.id.splash_screen_slideshow);
         Fade_in = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
@@ -56,16 +58,18 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
             signup = (Button) findViewById(R.id.signup_btn);
             login_check_box= (CheckBox) findViewById(R.id.login_check_box);
 
-            sharedPreferences=getSharedPreferences("loginPrefs",MODE_PRIVATE);
+            sharedPreferences=getSharedPreferences("LoginPreferences",MODE_PRIVATE);
             shared_pref_editor = sharedPreferences.edit();
             loginstatus = sharedPreferences.getBoolean("loginstatus",false);
 
             if(loginstatus==true)
             {
-                rollno.setText(sharedPreferences.getString("username", ""));
+                //String def value?
+                rollno.setText(sharedPreferences.getString("rollno",""));
                 password.setText(sharedPreferences.getString("password", ""));
                 login_check_box.setChecked(true);
             }
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -78,21 +82,19 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                     year_no = year.getText().toString();
                     password_no = password.getText().toString();
                     i.putExtra("Rollno", roll_no);
-                    i.putExtra("Batch", batch_no);
-                    i.putExtra("Year", year_no);
+
                 if (login_check_box.isChecked()) {
+
+                    LoginActivity.this.finish();
+                    startActivity(i);
                     shared_pref_editor.putBoolean("loginstatus", true);
-                    shared_pref_editor.putString("username", roll_no);
+                    shared_pref_editor.putString("rollno", roll_no);
                     shared_pref_editor.putString("password", password_no);
                     shared_pref_editor.commit();
                 } else {
                     shared_pref_editor.clear();
                     shared_pref_editor.commit();
                 }
-
-                startActivity(i);
-                LoginActivity.this.finish();
-
 
             }
         });

@@ -24,18 +24,13 @@ public class HomePageActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String message;
+        message=getIntent().getStringExtra("Rollno");
 
-        String message[]=new String [3];
-        message[0]=getIntent().getStringExtra("Rollno");
-        message[1]=getIntent().getStringExtra("Batch");
-        message[2]=getIntent().getStringExtra("Year");
 
         TextView rollno = (TextView) findViewById(R.id.roll_no_txt);
-        TextView batch = (TextView) findViewById(R.id.batch_txt);
-        TextView year = (TextView) findViewById(R.id.year_txt);
-        rollno.setText(message[0]);
-        batch.setText(message[1]);
-        year.setText(message[2]);
+        rollno.setText(message);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
