@@ -1,4 +1,4 @@
-package kritika.in.collegeapp;
+package kritika.in.collegeapp.ui.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,9 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class HomePageActivity extends AppCompatActivity
+import kritika.in.collegeapp.R;
+import kritika.in.collegeapp.utils.CollegeAppPreference;
+
+public class HomePageActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -25,7 +29,7 @@ public class HomePageActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         String message;
-        message=getIntent().getStringExtra("Rollno");
+        message= CollegeAppPreference.getUSERNAME();
 
 
         TextView rollno = (TextView) findViewById(R.id.roll_no_txt);
@@ -49,6 +53,15 @@ public class HomePageActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        final Button logout= (Button) findViewById(R.id.btnLogout);
+        logout.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
     }
 
     @Override

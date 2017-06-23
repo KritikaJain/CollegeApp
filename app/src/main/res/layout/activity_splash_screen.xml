@@ -8,7 +8,7 @@
     android:paddingLeft="40dp"
     android:paddingRight="40dp"
     android:paddingTop="40dp"
-    tools:context="kritika.in.collegeapp.SplashScreen">
+    tools:context="kritika.in.collegeapp.ui.activity.SplashScreen">
 
     <ImageView
         android:layout_width="match_parent"

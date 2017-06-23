@@ -1,12 +1,12 @@
-package kritika.in.collegeapp;
+package kritika.in.collegeapp.ui.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ViewFlipper;
+
+import kritika.in.collegeapp.R;
+import kritika.in.collegeapp.utils.CollegeAppPreference;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -18,7 +18,15 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
+                Intent i;
+                if(CollegeAppPreference.getLoginStatus()){
+
+                    i = new Intent(SplashScreen.this, HomePageActivity.class);
+                }
+                else{
+                    i = new Intent(SplashScreen.this, LoginActivity.class);
+                }
+
                 startActivity(i);
                 finish();
             }

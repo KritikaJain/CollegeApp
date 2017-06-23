@@ -1,8 +1,10 @@
-package kritika.in.collegeapp;
+package kritika.in.collegeapp.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import kritika.in.collegeapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 

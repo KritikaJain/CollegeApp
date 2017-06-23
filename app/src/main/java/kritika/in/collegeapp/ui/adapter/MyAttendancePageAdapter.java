@@ -1,11 +1,10 @@
-package kritika.in.collegeapp;
+package kritika.in.collegeapp.ui.adapter;
 
 import android.view.View;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -34,9 +33,7 @@ public class MyAttendancePageAdapter extends RecyclerView
         public subjectsHolder(View itemView) {
             super(itemView);
             sub_name = (TextView) itemView.findViewById(R.id.sub_name);
-            sub_code = (TextView) itemView.findViewById(R.id.sub_code);
-
-            Log.i(LOG_TAG, "Adding Listener");
+                        Log.i(LOG_TAG, "Adding Listener");
             itemView.setOnClickListener(this);
         }
 
@@ -67,7 +64,6 @@ public class MyAttendancePageAdapter extends RecyclerView
     @Override
     public void onBindViewHolder(subjectsHolder holder, int position) {
         holder.sub_name.setText(dataset.get(position).getSub_name());
-        holder.sub_code.setText(dataset.get(position).getSub_code());
 
     }
 

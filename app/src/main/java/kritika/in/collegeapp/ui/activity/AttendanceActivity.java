@@ -1,5 +1,7 @@
-package kritika.in.collegeapp;
+package kritika.in.collegeapp.ui.activity;
 
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -10,7 +12,11 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-public class AttendanceActivity extends AppCompatActivity {
+import kritika.in.collegeapp.R;
+import kritika.in.collegeapp.subjects;
+import kritika.in.collegeapp.ui.adapter.MyAttendancePageAdapter;
+
+public class AttendanceActivity extends BaseActivity {
     private RecyclerView rv;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lm;
@@ -30,6 +36,7 @@ public class AttendanceActivity extends AppCompatActivity {
             RecyclerView.ItemDecoration itemDecoration =
                     new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
             rv.addItemDecoration(itemDecoration);
+
 
             // Code to Add an item with default animation
             //((MyAttendancePageAdapter) adapter).addItem(obj, index);
@@ -55,13 +62,13 @@ public class AttendanceActivity extends AppCompatActivity {
             ArrayList results = new ArrayList<subjects>();
 
             subjects obj = null;
-            results.add(new subjects("english","21"));
-            results.add(new subjects("hindi","22"));
-            results.add(new subjects("maths","23"));
-            results.add(new subjects("Science","24"));
-            results.add(new subjects("SST","25"));
-            results.add(new subjects("sanskrit","26"));
-            results.add(new subjects("French","27"));
+            results.add(new subjects("JAVA"));
+            results.add(new subjects("C++"));
+            results.add(new subjects("Android"));
+            results.add(new subjects("Big data"));
+            results.add(new subjects("Html"));
+            results.add(new subjects("PHP"));
+            results.add(new subjects("French"));
 
 
             return results;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="kritika.in.collegeapp.LoginActivity">
+    tools:context="kritika.in.collegeapp.ui.activity.LoginActivity">
     <TextView
         android:id="@+id/txt_titleText"
         android:layout_width="wrap_content"
@@ -36,6 +36,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@id/roll_no_edttxt"
         android:hint="Password"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText

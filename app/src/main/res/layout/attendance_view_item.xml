@@ -1,34 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="8dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:id="@+id/sub_name"
-            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
             android:textColor="#000"
+            />
+        <ProgressBar
+            android:layout_below="@id/sub_name"
+            android:id="@+id/progress_bar"
+            android:layout_marginLeft="20dp"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:progress="83"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/progress_bar"
+            android:textColor="#000"
+            android:text="L: 90%"
+            android:id="@+id/lecture_percent"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="30dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@id/progress_bar"
             android:textColor="#000"
-            android:id="@+id/sub_code"
+            android:text="T: 60%"
+            android:id="@+id/tutorial_percent"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:textColor="#000"
-            android:textSize="30dp"
-            android:text="100%"/>
+            android:layout_alignBottom="@id/progress_bar"
+           android:layout_alignRight="@id/lecture_percent"
+            android:text="83%"/>
+
     </RelativeLayout>
 
-</LinearLayout>
+
+</android.support.v7.widget.CardView>
