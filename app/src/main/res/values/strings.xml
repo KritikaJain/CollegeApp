@@ -8,5 +8,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="spinner_title">Select Institute</string>
+    <string name="title_activity_exam__schedule_">Exam_Schedule_Activity</string>
 </resources>
 
