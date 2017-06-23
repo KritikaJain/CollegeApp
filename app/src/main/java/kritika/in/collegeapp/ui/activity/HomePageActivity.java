@@ -53,15 +53,6 @@ public class HomePageActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        final Button logout= (Button) findViewById(R.id.btnLogout);
-        logout.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                logout();
-            }
-        });
     }
 
     @Override
@@ -88,8 +79,14 @@ public class HomePageActivity extends BaseActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+        else if(id==R.id.btn_logout)
+        {
+          logout();
             return true;
         }
 

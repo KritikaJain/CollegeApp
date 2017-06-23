@@ -13,10 +13,4 @@
     tools:context="kritika.in.collegeapp.ui.activity.HomePageActivity"
     tools:showIn="@layout/app_bar_home_page">
 
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:text="Logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </RelativeLayout>
