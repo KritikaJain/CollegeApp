@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android"
+card_view:cardUseCompatPadding="true"
+card_view:cardCornerRadius="8dp"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/sem_no"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/sem_no"
+        android:textColor="#000"
+        android:text="Grade points:55.0 "
+        android:id="@+id/grade_point_txt"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentEnd="true"
+        android:layout_below="@id/sem_no"
+        android:textColor="#000"
+        android:text="Earned Credits: 23.0"
+        android:id="@+id/earned_credit_txt"
+        android:layout_alignParentRight="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/grade_point_txt"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        android:text="Course Credits: 23.0"
+        android:id="@+id/course_credit_txt"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/earned_credit_txt"
+        android:text="Points Secured: 148.0"
+        android:id="@+id/points_secured_text"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/course_credit_txt"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="SGPA: 8.4"
+        android:id="@+id/sgpa_txt"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CGPA: 7.6"
+        android:textSize="20dp"
+        android:layout_below="@id/course_credit_txt"
+      android:layout_marginLeft="130dp"
+        />
+
+</RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

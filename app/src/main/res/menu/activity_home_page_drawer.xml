@@ -3,21 +3,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_attendance"
+            android:icon="@drawable/attendance"
+            android:title="Attendace" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_annapurna"
+            android:icon="@drawable/annapurna"
+            android:title="Annapurna" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_exam"
+            android:icon="@drawable/exam_schedule"
+            android:title="Examination Schedule" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_cgpacal"
+            android:icon="@drawable/cgpa_sgpa_calculator"
+            android:title="CGPA/SGPA Calculator" />
+        <item
+            android:id="@+id/nav_placement"
+        android:icon="@drawable/placement"
+        android:title="Placements 2016-17" />
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/web_view"
+            android:title="Web View" />
     </group>
 
     <item android:title="Communicate">

@@ -1,10 +1,9 @@
 package kritika.in.collegeapp.ui.adapter;
 
-import android.view.View;
-
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -14,11 +13,11 @@ import kritika.in.collegeapp.R;
 import kritika.in.collegeapp.subjects;
 
 /**
- * Created by dell on 22-Jun-17.
+ * Created by dell on 27-Jun-17.
  */
 
-public class MyAttendancePageAdapter extends RecyclerView
-        .Adapter<MyAttendancePageAdapter
+public class MyExamSchedulePageAdapter extends RecyclerView
+        .Adapter<MyExamSchedulePageAdapter
         .subjectsHolder> {
     private static String LOG_TAG = "MyAdapter";
     private ArrayList<subjects> dataset;
@@ -28,12 +27,11 @@ public class MyAttendancePageAdapter extends RecyclerView
             implements View
             .OnClickListener {
         TextView sub_name;
-        TextView sub_code;
 
         public subjectsHolder(View itemView) {
             super(itemView);
-            sub_name = (TextView) itemView.findViewById(R.id.sub_name);
-                        Log.i(LOG_TAG, "Adding Listener");
+            sub_name = (TextView) itemView.findViewById(R.id.exam_sub_name);
+            Log.i(LOG_TAG, "Adding Listener");
             itemView.setOnClickListener(this);
         }
 
@@ -47,15 +45,15 @@ public class MyAttendancePageAdapter extends RecyclerView
         this.myClickListener = myClickListener;
     }
 
-    public MyAttendancePageAdapter(ArrayList<subjects> myDataset) {
+    public MyExamSchedulePageAdapter(ArrayList<subjects> myDataset) {
         dataset = myDataset;
     }
 
     @Override
     public subjectsHolder onCreateViewHolder(ViewGroup parent,
-                                           int viewType) {
+                                             int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.attendance_view_item, parent, false);
+                .inflate(R.layout.exam_schedule_single_view, parent, false);
 
         subjectsHolder p = new subjectsHolder(view);
         return p;
@@ -64,7 +62,6 @@ public class MyAttendancePageAdapter extends RecyclerView
     @Override
     public void onBindViewHolder(subjectsHolder holder, int position) {
         holder.sub_name.setText(dataset.get(position).getSub_name());
-
     }
 
     public void addItem(subjects dataObj, int index) {
@@ -87,3 +84,4 @@ public class MyAttendancePageAdapter extends RecyclerView
 
     }
 }
+

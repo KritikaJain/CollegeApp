@@ -1,5 +1,6 @@
 package kritika.in.collegeapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -96,23 +97,34 @@ public class HomePageActivity extends BaseActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        Intent intent = null;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_attendance) {
+            intent =new Intent(getApplicationContext(),AttendanceActivity.class);
+
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_annapurna) {
+            intent=new Intent(getApplicationContext(),AnnapurnaActivity.class);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_exam) {
+            intent=new Intent(getApplicationContext(),ExamScheduleActivity.class);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_cgpacal) {
+            intent=new Intent(getApplicationContext(),CGPAMainActivity.class);
 
-        } else if (id == R.id.nav_share) {
+        }else if (id == R.id.nav_placement) {
+
+        }else if (id == R.id.nav_webview) {
+
+        }
+        else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
-
+        startActivity(intent);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

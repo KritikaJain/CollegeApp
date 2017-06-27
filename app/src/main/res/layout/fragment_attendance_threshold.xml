@@ -34,6 +34,7 @@
             android:layout_marginBottom="10dp"
             android:textSize="15dp"
             android:textColor="#000"
+            android:textAlignment="center"
             android:id="@+id/title_sub_name"/>
 
         <TextView
@@ -44,6 +45,25 @@
         android:layout_height="wrap_content"
         android:text="Lecture"
         android:textSize="20dp"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/present_fixed_txt"
+            android:layout_below="@id/lecture_fixed_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Present"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absent"
+            android:textColor="#000"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/present_fixed_txt"/>
+
         <TextView
             android:textColor="#000"
             android:layout_marginRight="10dp"
@@ -64,23 +84,6 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/present_variable_txt"
             android:id="@+id/absent_variable_txt"/>
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:id="@+id/present_fixed_txt"
-            android:layout_below="@id/lecture_fixed_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Present"
-            android:textColor="#000"
-            />
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Absent"
-            android:textColor="#000"
-            android:layout_marginBottom="10dp"
-            android:layout_below="@id/present_fixed_txt"/>
 
     </RelativeLayout>
 
@@ -138,6 +141,8 @@
 
         <TextView
             android:textColor="#000"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/on_attending_variable_txt"
