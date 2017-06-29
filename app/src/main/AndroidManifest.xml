@@ -11,29 +11,27 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.SignUpActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.SplashScreen" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".ui.activity.SplashScreen"></activity>
         <activity
             android:name=".ui.activity.HomePageActivity"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.AttendanceActivity">
-
-        </activity>
+        <activity android:name=".ui.activity.AttendanceActivity"></activity>
         <activity android:name=".ui.activity.BaseActivity" />
         <activity android:name=".ui.activity.ExamScheduleActivity" />
         <activity
             android:name=".ui.activity.AnnapurnaActivity"
             android:label="@string/title_activity_annapurna"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activity.CGPAMainActivity"></activity>
+        <activity android:name=".ui.activity.CGPAMainActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -8,10 +8,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -44,10 +47,11 @@ public class CGPACalculationFragment extends Fragment {
             rv.setAdapter(adapter);
             RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mcontext, LinearLayoutManager.VERTICAL);
             rv.addItemDecoration(itemDecoration);
-            return view;
+
+        return view;
         }
 
-        @Override
+    @Override
         public void onResume() {
             super.onResume();
             ((MyCGPACalculationPageAdapter) adapter).setOnItemClickListener(new
@@ -56,7 +60,7 @@ public class CGPACalculationFragment extends Fragment {
                                                                                    public void onItemClick(int position, View v) {
 
                                                                                        Log.i(LOG_TAG, " Clicked on Item " + position);
-                                                                                   
+
                                                                                    }
                                                                                });
         }
