@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         Animation Fade_in, Fade_out;
         ViewFlipper viewFlipper;
         Button login;
-        Button signup;
         EditText rollno;
         EditText batch;
         EditText year;
@@ -56,7 +55,6 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
             batch= (EditText) findViewById(R.id.batch_edttxt);
             year= (EditText) findViewById(R.id.year_edttxt);
             login = (Button) findViewById(R.id.login_btn);
-            signup = (Button) findViewById(R.id.signup_btn);
             login_check_box= (CheckBox) findViewById(R.id.login_check_box);
 
 
@@ -73,13 +71,6 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
 
 
-            }
-        });
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivity(i);
             }
         });
 

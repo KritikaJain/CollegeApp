@@ -47,9 +47,29 @@ public class CGPACalculationFragment extends Fragment {
             rv.setAdapter(adapter);
             RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mcontext, LinearLayoutManager.VERTICAL);
             rv.addItemDecoration(itemDecoration);
-
+            registerForContextMenu(rv);
         return view;
         }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Select The Action");
+        menu.add(0, v.getId(), 0, "Call");//groupId, itemId, order, title
+        menu.add(0, v.getId(), 0, "SMS");
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()=="Call"){
+            Toast.makeText(mcontext,"calling code",Toast.LENGTH_LONG).show();
+        }
+        else if(item.getTitle()=="SMS"){
+            Toast.makeText(mcontext,"sending sms code",Toast.LENGTH_LONG).show();
+        }else{
+            return false;
+        }
+        return true;
+    }
 
     @Override
         public void onResume() {
@@ -60,7 +80,6 @@ public class CGPACalculationFragment extends Fragment {
                                                                                    public void onItemClick(int position, View v) {
 
                                                                                        Log.i(LOG_TAG, " Clicked on Item " + position);
-
                                                                                    }
                                                                                });
         }

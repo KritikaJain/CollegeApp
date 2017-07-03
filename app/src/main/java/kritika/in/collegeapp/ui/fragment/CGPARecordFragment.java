@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -44,6 +45,21 @@ public class CGPARecordFragment extends Fragment {
         rv.setAdapter(adapter);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mcontext, LinearLayoutManager.VERTICAL);
         rv.addItemDecoration(itemDecoration);
+        FloatingActionButton floatingActionButton  = (FloatingActionButton) view.findViewById(R.id.fab_cgpa_record);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CGPACalculationFragment ccf = new CGPACalculationFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                Fragment fragment = getFragmentManager().findFragmentById(R.id.cgpa_record_fragment);
+                if (fragment != null) {
+                    transaction.hide(fragment);
+                }
+                transaction.add(R.id.activity_cgpa, ccf);
+                transaction.addToBackStack(CGPACalculationFragment.class.getSimpleName());
+                transaction.commit();
+            }
+        });
         return view;
     }
 
@@ -54,15 +70,7 @@ public class CGPARecordFragment extends Fragment {
         @Override
              public void onItemClick(int position, View v) {
                Log.i(LOG_TAG, " Clicked on Item " + position);
-             CGPACalculationFragment ccf = new CGPACalculationFragment();
-      FragmentTransaction transaction = getFragmentManager().beginTransaction();
-       Fragment fragment = getFragmentManager().findFragmentById(R.id.cgpa_record_fragment);
-                 if (fragment != null) {
-                     transaction.hide(fragment);
-          }
-              transaction.add(R.id.activity_cgpa, ccf);
-             transaction.addToBackStack(CGPACalculationFragment.class.getSimpleName());
-              transaction.commit();
+
           }
          });
     }

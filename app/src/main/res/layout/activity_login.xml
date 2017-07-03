@@ -104,22 +104,12 @@
             android:src="@mipmap/wakh_three"/>
     </ViewFlipper>
 
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/signup_btn"
-        android:text="Sign Up"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp" />
     <Button
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOG IN"
-        android:layout_above="@id/signup_btn"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@id/login_check_box"
         android:id="@+id/login_btn"/>
 
 
